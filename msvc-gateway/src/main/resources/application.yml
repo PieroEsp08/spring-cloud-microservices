@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: msvc-products
+          uri: lb://msvc-products
+          predicates:
+          - Path=/api/products/**
+          #- Header=token, \d+
+          #- Method=GET, POST
+          #- Query=color, verde
+          #- Cookie=color, azul
+          filters:
+          - StripPrefix=2
+          - EjemploCookie=Hola mi mensaje personalizado para productos!, user, Piero
+        - id: msvc-items
+          uri: lb://msvc-items
+          predicates:
+            - Path=/api/items/**
+          filters:
+            - StripPrefix=2
+            - AddRequestHeader=token-request, asdasdas
+            - AddResponseHeader=tokenresponse, 123456
+            - AddRequestParameter=name, Piero
+            - SetResponseHeader=Content-Type, text/plain

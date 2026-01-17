@@ -1,0 +1,18 @@
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Maven / Gradle
+**/target/
+**/build/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
