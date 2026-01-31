@@ -5,6 +5,7 @@ import com.piero.springcloud.msvc.items.entities.Product;
 import com.piero.springcloud.msvc.items.services.ItemService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
+import jakarta.ws.rs.Path;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,7 +37,7 @@ public class ItemController {
     @Autowired
     private Environment env;
 
-    public ItemController(@Qualifier("itemServiceWebClient") ItemService service,
+    public ItemController(@Qualifier("itemServiceFeign") ItemService service,
     CircuitBreakerFactory cBreakerFactory) {
         this.cBreakerFactory = cBreakerFactory;
         this.service = service;
@@ -138,6 +140,24 @@ public class ItemController {
             return ResponseEntity.ok(new Item(product, 5));
         });
 
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product create(@RequestBody Product product){
+        return service.save(product);
+    }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PutMapping("/{id}")
+    public Product update(@RequestBody Product product, @PathVariable Long id){
+        return service.update(product,id);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id){
+        service.delete(id);
     }
 
 
