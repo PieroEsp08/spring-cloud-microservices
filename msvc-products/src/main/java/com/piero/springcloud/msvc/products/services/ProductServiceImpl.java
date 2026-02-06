@@ -1,6 +1,6 @@
 package com.piero.springcloud.msvc.products.services;
 
-import com.piero.springcloud.msvc.products.entities.Product;
+import com.piero.libs.msvc.commons.entities.Product;
 import com.piero.springcloud.msvc.products.repositories.ProductRepository;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;

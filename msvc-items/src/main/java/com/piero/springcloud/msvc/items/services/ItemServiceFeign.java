@@ -1,8 +1,8 @@
 package com.piero.springcloud.msvc.items.services;
 
+import com.piero.libs.msvc.commons.entities.Product;
 import com.piero.springcloud.msvc.items.clients.ProductFeignClient;
 import com.piero.springcloud.msvc.items.entities.Item;
-import com.piero.springcloud.msvc.items.entities.Product;
 import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,11 +1,10 @@
 package com.piero.springcloud.msvc.items.services;
 
+import com.piero.libs.msvc.commons.entities.Product;
 import com.piero.springcloud.msvc.items.entities.Item;
-import com.piero.springcloud.msvc.items.entities.Product;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import java.util.*;
 

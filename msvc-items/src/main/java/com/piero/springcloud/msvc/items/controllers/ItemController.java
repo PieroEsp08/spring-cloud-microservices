@@ -1,11 +1,10 @@
 package com.piero.springcloud.msvc.items.controllers;
 
+import com.piero.libs.msvc.commons.entities.Product;
 import com.piero.springcloud.msvc.items.entities.Item;
-import com.piero.springcloud.msvc.items.entities.Product;
 import com.piero.springcloud.msvc.items.services.ItemService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
-import jakarta.ws.rs.Path;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

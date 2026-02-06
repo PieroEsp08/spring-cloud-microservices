@@ -1,6 +1,6 @@
 package com.piero.springcloud.msvc.products.services;
 
-import com.piero.springcloud.msvc.products.entities.Product;
+import com.piero.libs.msvc.commons.entities.Product;
 
 import java.util.List;
 import java.util.Optional;

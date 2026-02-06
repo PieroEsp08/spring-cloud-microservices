@@ -1,6 +1,6 @@
 package com.piero.springcloud.msvc.items.clients;
 
-import com.piero.springcloud.msvc.items.entities.Product;
+import com.piero.libs.msvc.commons.entities.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
 package com.piero.springcloud.msvc.products.controllers;
 
-import com.piero.springcloud.msvc.products.entities.Product;
+import com.piero.libs.msvc.commons.entities.Product;
 import com.piero.springcloud.msvc.products.services.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

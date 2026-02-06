@@ -1,5 +1,7 @@
 package com.piero.springcloud.msvc.items.entities;
 
+import com.piero.libs.msvc.commons.entities.Product;
+
 public class Item {
 
     private Product product;
